@@ -1,0 +1,11 @@
+[package]
+name = "res-tree"
+version = "0.1.0"
+authors = ["Robert Masen <r@robertmasen.pizza>"]
+[dependencies]
+inherit = {path = "./crates/inherit"}
+
+[workspace]
+members = [
+    "./crates/inherit",
+]

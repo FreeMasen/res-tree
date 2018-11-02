@@ -1,0 +1,7 @@
+/target
+**/*.rs.bk
+node_modules
+**/*.log
+package-lock.json
+getKinds.js
+.vscode

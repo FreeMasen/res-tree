@@ -1,0 +1,86 @@
+use std::num::NonZeroU64;
+pub trait Node {
+    fn loc(&self) -> SourceLocation;
+    fn kind(&self) -> NodeKind;
+}
+
+#[derive(Debug, Clone)]
+pub struct SourceLocation {
+    pub source: Option<String>,
+    pub start: Position,
+    pub end: Position,
+}
+#[derive(Debug, Clone, Copy)]
+pub struct Position {
+    pub line: NonZeroU64,
+    pub column: u64,
+}
+
+#[derive(Debug)]
+pub enum NodeKind {
+    Identifier,
+    Literal,
+    Program,
+    ExpressionStatement,
+    BlockStatement,
+    EmptyStatement,
+    DebuggerStatement,
+    WithStatement,
+    ReturnStatement,
+    LabeledStatement,
+    BreakStatement,
+    ContinueStatement,
+    IfStatement,
+    SwitchStatement,
+    SwitchCase,
+    ThrowStatement,
+    TryStatement,
+    CatchClause,
+    WhileStatement,
+    DoWhileStatement,
+    ForStatement,
+    ForInStatement,
+    FunctionDeclaration,
+    VariableDeclaration,
+    VariableDeclarator,
+    ThisExpression,
+    ArrayExpression,
+    ObjectExpression,
+    Property,
+    FunctionExpression,
+    UnaryExpression,
+    UpdateExpression,
+    BinaryExpression,
+    AssignmentExpression,
+    LogicalExpression,
+    MemberExpression,
+    ConditionalExpression,
+    CallExpression,
+    NewExpression,
+    SequenceExpression,
+    ForOfStatement,
+    Super,
+    SpreadElement,
+    ArrowFunctionExpression,
+    YieldExpression,
+    TemplateLiteral,
+    TaggedTemplateExpression,
+    TemplateElement,
+    ObjectPattern,
+    ArrayPattern,
+    RestElement,
+    AssignmentPattern,
+    ClassBody,
+    MethodDefinition,
+    ClassDeclaration,
+    ClassExpression,
+    MetaProperty,
+    ImportDeclaration,
+    ImportSpecifier,
+    ImportDefaultSpecifier,
+    ImportNamespaceSpecifier,
+    ExportNamedDeclaration,
+    ExportSpecifier,
+    ExportDefaultDeclaration,
+    ExportAllDeclaration,
+}
